@@ -1,3 +1,4 @@
+alert("1")
 !function(a, b) {
     "object" == typeof exports && "undefined" != typeof module ? module.exports = b() : "function" == typeof define && define.amd ? define(b) : a.moment = b();
 }(this, function() {
@@ -10012,7 +10013,7 @@ $.widget("nh.floorMap", {
                     roomClass += "room-available";
                     roomContainer.off("click touchend");
                     if (this.options.zoomType === "In") {
-                        roomContainer.on("click touchend", this.selectRoom.bind(this));
+                        //roomContainer.on("click touchend", this.selectRoom.bind(this));
                     }
                 } else {
                     roomClass += "room-noavailable";
