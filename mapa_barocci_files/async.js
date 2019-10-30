@@ -9548,7 +9548,11 @@ var mCioRoomSelected = function() {
     function _initialRoomModalState() {
         navigate(selectedModalTemplate);
     }
+
     function navigate(tplUrl) {
+        alert("asjdflkñasdjf")
+    }
+    function navigatexx(tplUrl) {
         mCioRoomSelectedModal.htmlInject("toggleLoading", true, $("#modal-room-selected").find(".modal-body"));
         let roomSelect = $(".is-selected").find(".room-content").data("room");
         mChooseRoom.hiddenForm.val(roomSelect);
@@ -10012,10 +10016,7 @@ $.widget("nh.floorMap", {
                     roomClass += "room-available";
                     roomContainer.off("click touchend");
                     if (this.options.zoomType === "In") {
-                        //roomContainer.on("click touchend", this.selectRoom.bind(this));
-                        roomContainer.on("click touchend", function(){
-                            alert("test")
-                        });
+                        roomContainer.on("click touchend", this.selectRoom.bind(this));
                     }
                 } else {
                     roomClass += "room-noavailable";
