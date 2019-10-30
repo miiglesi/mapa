@@ -10014,6 +10014,7 @@ $.widget("nh.floorMap", {
                     roomContainer.off("click touchend");
                     if (this.options.zoomType === "In") {
                         //roomContainer.on("click touchend", this.selectRoom.bind(this));
+                        roomContainer.on("click tap", this.selectRoom.bind(this));
                     }
                 } else {
                     roomClass += "room-noavailable";
