@@ -10011,10 +10011,10 @@ $.widget("nh.floorMap", {
             if (selectableRoomsList.indexOf(roomData.special) >= 0) {
                 if (roomData.available) {
                     roomClass += "room-available";
-                    roomContainer.off("click tap");
+                    roomContainer.off("click touchstart");
                     if (this.options.zoomType === "In") {
                         //roomContainer.on("click touchend", this.selectRoom.bind(this));
-                        roomContainer.on("click tap", this.selectRoom.bind(this));
+                        roomContainer.on("click touchstart", this.selectRoom.bind(this));
                     }
                 } else {
                     roomClass += "room-noavailable";
