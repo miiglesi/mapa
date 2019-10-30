@@ -10011,7 +10011,7 @@ $.widget("nh.floorMap", {
             if (selectableRoomsList.indexOf(roomData.special) >= 0) {
                 if (roomData.available) {
                     roomClass += "room-available";
-                    roomContainer.off("click touchend");
+                    roomContainer.off("click tap");
                     if (this.options.zoomType === "In") {
                         //roomContainer.on("click touchend", this.selectRoom.bind(this));
                         roomContainer.on("click tap", this.selectRoom.bind(this));
