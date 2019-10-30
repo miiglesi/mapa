@@ -1,4 +1,3 @@
-alert("55")
 !function(a, b) {
     "object" == typeof exports && "undefined" != typeof module ? module.exports = b() : "function" == typeof define && define.amd ? define(b) : a.moment = b();
 }(this, function() {
@@ -10011,12 +10010,12 @@ $.widget("nh.floorMap", {
             if (selectableRoomsList.indexOf(roomData.special) >= 0) {
                 if (roomData.available) {
                     roomClass += "room-available";
-                    //roomContainer.off("click touchstart");
+                    roomContainer.off("click touchend");
                     if (this.options.zoomType === "In") {
                         //roomContainer.on("click touchend", this.selectRoom.bind(this));
-                        //roomContainer.on("click touchstart", this.selectRoom.bind(this));
-
-                        roomContainer.on("click touchstart",function(){alert("")})
+                        roomContainer.on("click touchend", function(){
+                            alert("test")
+                        });
                     }
                 } else {
                     roomClass += "room-noavailable";
