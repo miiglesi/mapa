@@ -1,0 +1,396 @@
+<div class="m-search-bar home full-width box">
+    <div class="search-bar">
+        <form id="searchBarModifyForm" action="/" method="post" autocomplete="off" accept-charset="utf-8" novalidate>
+            <input type="hidden" data-id="code" data-target="code">
+            <input type="hidden" data-id="type" data-target="typeSearch">
+            <input type="hidden" data-id="name" data-target="Name">
+            <input type="hidden" data-id="locality" data-target="locality">
+            <input type="hidden" data-target="tcm">
+            <input type="hidden" name="destinationTcm" data-id="locationTCM" data-target="tcm">
+            <input type="hidden" name="destinationValue" data-id="locationLcv" data-target="lcv">
+            <input type="hidden" name="urlHotel" data-id="urlHotel" data-target="url">
+            <input type="hidden" name="tipoBuscador" value="Home" data-id="tipoBuscador">
+            <input type="hidden" name="otaTarget" data-id="otaTarget">
+            <input type="hidden" name="virtualHotel" data-id="virtualHotel" data-target="vh">
+            <input type="hidden" id="lang" value="en">
+            <!-- INI GEOLOCALIZATION-->
+            <!-- Latitud-->
+            <input class="geo-lat js-geolocation" type="hidden" name="latitude">
+            <!-- Longitud-->
+            <input class="geo-lon js-geolocation" type="hidden" name="longitude">
+            <!-- Precisión-->
+            <input class="geo-acc js-geolocation" type="hidden" name="geo-acc">
+            <!-- FIN GEOLOCALIZATION-->
+            <div class="search-bar-content">
+                <div class="location">
+                    <div class="form-group labelup ico-right input-group">
+                        <label class="labelup-control focus" for="location2-sb">Location
+                        </label>
+                        <input class="form-control ui-autocomplete-group js-no-scroll text-ellipsis" type="text"
+                            name="searchStringID" id="location2-sb" placeholder="My current location"
+                            data-source="mocks/get-json-autocomplete.json" data-hotel-label='["hotel","hoteles"]'
+                            data-error="Required field!" data-initial-value="true">
+                        <div class="autocomplete-results"></div>
+                        <button class="btn-clear js-input-clear" type="button" aria-label="Clear"><span
+                                class="nh-ic-input-clear" aria-hidden="true"></span></button>
+                        <div class="container-icon"><span class="nh-ic-poi"></span></div>
+                    </div>
+                </div>
+                <div class="m-calendar-booking" data-checkin-date="21/8/2019" data-checkout-date="22/8/2019"
+                    data-msg-checkin="Elija fecha de inicio" data-msg-checkout="Elija fecha de salida"
+                    data-msg-novalid="Fechas no válidas" data-msg-night="noche elegida"
+                    data-msg-nights="noches elegidas"
+                    data-msg-maxmonths="Lo sentimos, no puedes reservar con más de 18 meses de antelación">
+                    <div class="calendar-booking">
+                        <div class="js-calendar-booking-input calendar-booking-input">
+                            <div class="form-group labelup">
+                                <label class="labelup-control" for="calendar-checkin-sb">Check-in
+                                </label>
+                                <input class="form-control js-selected-checkin text-ellipsis" type="text" name="fini"
+                                    id="calendar-checkin-sb" readonly>
+                                <button class="btn-clear js-input-clear" type="button" aria-label="Clear"><span
+                                        class="nh-ic-input-clear" aria-hidden="true"></span></button>
+                            </div>
+                            <div class="form-group labelup">
+                                <label class="labelup-control" for="calendar-checkout-sb">Check-out
+                                </label>
+                                <input class="form-control js-selected-checkout text-ellipsis" type="text" name="fout"
+                                    id="calendar-checkout-sb" readonly>
+                                <button class="btn-clear js-input-clear" type="button" aria-label="Clear"><span
+                                        class="nh-ic-input-clear" aria-hidden="true"></span></button>
+                            </div>
+                        </div>
+                        <div class="help-block with-errors side">
+                            <ul class="list-unstyled">
+                                <li>Invalid Range</li>
+                            </ul>
+                        </div>
+                        <div class="js-calendar-booking-dropdown calendar-booking-dropdown">
+                            <div class="calendar-booking-header">
+                                <div class="calendar-booking-title"><span class="title-name">Selecciona
+                                        fechas</span><span class="title-icon nh-ic-close" aria-hidden="true"></span>
+                                </div>
+                                <div class="calendar-booking-selected">
+                                    <div class="calendar-booking-arrow is-before"><span class="nh-ic-speed"></span>
+                                    </div>
+                                    <div class="calendar-booking-checkin"><span>Check-in</span>
+                                        <p class="js-selected-checkin">-</p>
+                                    </div>
+                                    <div class="calendar-booking-checkout"><span>Check-out</span>
+                                        <p class="js-selected-checkout">-</p>
+                                    </div>
+                                    <div class="calendar-booking-arrow is-after"><span class="nh-ic-speed"></span></div>
+                                </div>
+                                <div class="calendar-booking-weeks"></div>
+                                <div class="calendar-booking-month-fixed"></div>
+                            </div>
+                            <div class="calendar-booking-months"></div>
+                            <div class="calendar-booking-footer">
+                                <div class="calendar-booking-info">Mensajes informativos sobre el calendario</div>
+                                <button class="btn btn-primary js-calendar-booking-button" disabled
+                                    type="button">Aplicar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-occupancy" id="m-occupancy-sb">
+                    <div class="form-group labelup ico-right input-group has-feedback">
+                        <label class="labelup-control" for="optionRooms">Occupancy
+                        </label>
+                        <input class="form-control optionRooms js-no-scroll text-ellipsis" type="text" name=" "
+                            id="optionRooms" required readonly data-required-error="Required field default">
+                        <button class="btn-clear js-input-clear" type="button" aria-label="Clear"><span
+                                class="nh-ic-input-clear" aria-hidden="true"></span></button>
+                        <div class="container-icon"><span class="nh-ic-user-line"></span></div>
+                        <div class="help-block with-errors side">
+                        </div>
+                    </div>
+                    <div class="m-occupancy-wrapper">
+                        <div class="occupancy-content"
+                            data-labels="{&quot;rooms&quot;:&quot;rooms&quot;,&quot;room&quot;:&quot;room&quot;,&quot;adults&quot;:&quot;adults&quot;,&quot;adult&quot;:&quot;adult&quot;,&quot;children&quot;:&quot;children&quot;,&quot;child&quot;:&quot;child&quot;,&quot;babies&quot;:&quot;babies&quot;,&quot;baby&quot;:&quot;baby&quot;}">
+                            <div class="option-values"></div>
+                            <div class="option-header">
+                                <h1 class="title">Select Rooms</h1>
+                                <title-icon class="nh-ic-close room-close"></title-icon>
+                            </div>
+                            <div class="option-list">
+                                <!-- option 1-->
+                                <div class="option option-1">
+                                    <div class="load"></div>
+                                    <div class="option-box title">
+                                        <button class="room-close delete-room" type="button" title="Delete room"
+                                            data-close="0"><i class="nh-ic-close"></i><span
+                                                class="hide">close</span></button><span class="h5">Room 1</span>
+                                    </div>
+                                    <div class="option-box adults">
+                                        <fieldset>
+                                            <div class="fields">
+                                                <label>Adults</label>
+                                                <div class="controls" data-type="adults" data-min="1">
+                                                    <button class="minus nh-ic-minus" type="button"
+                                                        title="Remove"></button>
+                                                    <input class="ammount" type="text" readonly tabindex="-1">
+                                                    <button class="plus nh-ic-plus" type="button" title="Add"></button>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="option-box children">
+                                        <fieldset>
+                                            <div class="fields">
+                                                <label>Children<span>2-11 years</span></label>
+                                                <div class="controls" data-type="children" data-min="0">
+                                                    <button class="minus nh-ic-minus" type="button"
+                                                        title="Remove"></button>
+                                                    <input class="ammount" type="text" readonly tabindex="-1">
+                                                    <button class="plus nh-ic-plus" type="button" title="Add"></button>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="option-box babies">
+                                        <fieldset>
+                                            <div class="fields">
+                                                <label>Babies<span>0-2 years</span></label>
+                                                <div class="controls" data-type="babies" data-min="0">
+                                                    <button class="minus nh-ic-minus" type="button"
+                                                        title="Remove"></button>
+                                                    <input class="ammount" type="text" readonly tabindex="-1">
+                                                    <button class="plus nh-ic-plus" type="button" title="Add"></button>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                                <!-- option 2-->
+                                <div class="option option-2">
+                                    <div class="load"></div>
+                                    <div class="option-box title">
+                                        <button class="room-close delete-room" type="button" title="Delete room"
+                                            data-close="1"><i class="nh-ic-close"></i><span
+                                                class="hide">close</span></button><span class="h5">Room 2</span>
+                                    </div>
+                                    <div class="option-box adults">
+                                        <fieldset>
+                                            <div class="fields">
+                                                <label>Adults</label>
+                                                <div class="controls" data-type="adults" data-min="1">
+                                                    <button class="minus nh-ic-minus" type="button"
+                                                        title="Remove"></button>
+                                                    <input class="ammount" type="text" readonly tabindex="-1">
+                                                    <button class="plus nh-ic-plus" type="button" title="Add"></button>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="option-box children">
+                                        <fieldset>
+                                            <div class="fields">
+                                                <label>Children<span>2-11 years</span></label>
+                                                <div class="controls" data-type="children" data-min="0">
+                                                    <button class="minus nh-ic-minus" type="button"
+                                                        title="Remove"></button>
+                                                    <input class="ammount" type="text" readonly tabindex="-1">
+                                                    <button class="plus nh-ic-plus" type="button" title="Add"></button>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="option-box babies">
+                                        <fieldset>
+                                            <div class="fields">
+                                                <label>Babies<span>0-2 years</span></label>
+                                                <div class="controls" data-type="babies" data-min="0">
+                                                    <button class="minus nh-ic-minus" type="button"
+                                                        title="Remove"></button>
+                                                    <input class="ammount" type="text" readonly tabindex="-1">
+                                                    <button class="plus nh-ic-plus" type="button" title="Add"></button>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                                <!-- option 3-->
+                                <div class="option option-3">
+                                    <div class="load"></div>
+                                    <div class="option-box title">
+                                        <button class="room-close delete-room" type="button" title="Delete room"
+                                            data-close="2"><i class="nh-ic-close"></i><span
+                                                class="hide">close</span></button><span class="h5">Room 3</span>
+                                    </div>
+                                    <div class="option-box adults">
+                                        <fieldset>
+                                            <div class="fields">
+                                                <label>Adults</label>
+                                                <div class="controls" data-type="adults" data-min="1">
+                                                    <button class="minus nh-ic-minus" type="button"
+                                                        title="Remove"></button>
+                                                    <input class="ammount" type="text" readonly tabindex="-1">
+                                                    <button class="plus nh-ic-plus" type="button" title="Add"></button>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="option-box children">
+                                        <fieldset>
+                                            <div class="fields">
+                                                <label>Children<span>2-11 years</span></label>
+                                                <div class="controls" data-type="children" data-min="0">
+                                                    <button class="minus nh-ic-minus" type="button"
+                                                        title="Remove"></button>
+                                                    <input class="ammount" type="text" readonly tabindex="-1">
+                                                    <button class="plus nh-ic-plus" type="button" title="Add"></button>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="option-box babies">
+                                        <fieldset>
+                                            <div class="fields">
+                                                <label>Babies<span>0-2 years</span></label>
+                                                <div class="controls" data-type="babies" data-min="0">
+                                                    <button class="minus nh-ic-minus" type="button"
+                                                        title="Remove"></button>
+                                                    <input class="ammount" type="text" readonly tabindex="-1">
+                                                    <button class="plus nh-ic-plus" type="button" title="Add"></button>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                                <!-- option 4-->
+                                <div class="option option-4">
+                                    <div class="load"></div>
+                                    <div class="option-box title">
+                                        <button class="room-close delete-room" type="button" title="Delete room"
+                                            data-close="3"><i class="nh-ic-close"></i><span
+                                                class="hide">close</span></button><span class="h5">Room 4</span>
+                                    </div>
+                                    <div class="option-box adults">
+                                        <fieldset>
+                                            <div class="fields">
+                                                <label>Adults</label>
+                                                <div class="controls" data-type="adults" data-min="1">
+                                                    <button class="minus nh-ic-minus" type="button"
+                                                        title="Remove"></button>
+                                                    <input class="ammount" type="text" readonly tabindex="-1">
+                                                    <button class="plus nh-ic-plus" type="button" title="Add"></button>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="option-box children">
+                                        <fieldset>
+                                            <div class="fields">
+                                                <label>Children<span>2-11 years</span></label>
+                                                <div class="controls" data-type="children" data-min="0">
+                                                    <button class="minus nh-ic-minus" type="button"
+                                                        title="Remove"></button>
+                                                    <input class="ammount" type="text" readonly tabindex="-1">
+                                                    <button class="plus nh-ic-plus" type="button" title="Add"></button>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="option-box babies">
+                                        <fieldset>
+                                            <div class="fields">
+                                                <label>Babies<span>0-2 years</span></label>
+                                                <div class="controls" data-type="babies" data-min="0">
+                                                    <button class="minus nh-ic-minus" type="button"
+                                                        title="Remove"></button>
+                                                    <input class="ammount" type="text" readonly tabindex="-1">
+                                                    <button class="plus nh-ic-plus" type="button" title="Add"></button>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                                <!-- option 5-->
+                                <div class="option option-5">
+                                    <div class="load"></div>
+                                    <div class="option-box title">
+                                        <button class="room-close delete-room" type="button" title="Delete room"
+                                            data-close="4"><i class="nh-ic-close"></i><span
+                                                class="hide">close</span></button><span class="h5">Room 5</span>
+                                    </div>
+                                    <div class="option-box adults">
+                                        <fieldset>
+                                            <div class="fields">
+                                                <label>Adults</label>
+                                                <div class="controls" data-type="adults" data-min="1">
+                                                    <button class="minus nh-ic-minus" type="button"
+                                                        title="Remove"></button>
+                                                    <input class="ammount" type="text" readonly tabindex="-1">
+                                                    <button class="plus nh-ic-plus" type="button" title="Add"></button>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="option-box children">
+                                        <fieldset>
+                                            <div class="fields">
+                                                <label>Children<span>2-11 years</span></label>
+                                                <div class="controls" data-type="children" data-min="0">
+                                                    <button class="minus nh-ic-minus" type="button"
+                                                        title="Remove"></button>
+                                                    <input class="ammount" type="text" readonly tabindex="-1">
+                                                    <button class="plus nh-ic-plus" type="button" title="Add"></button>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="option-box babies">
+                                        <fieldset>
+                                            <div class="fields">
+                                                <label>Babies<span>0-2 years</span></label>
+                                                <div class="controls" data-type="babies" data-min="0">
+                                                    <button class="minus nh-ic-minus" type="button"
+                                                        title="Remove"></button>
+                                                    <input class="ammount" type="text" readonly tabindex="-1">
+                                                    <button class="plus nh-ic-plus" type="button" title="Add"></button>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                                <div id="endRooms"></div>
+                            </div>
+                            <div class="occupancy-footer">
+                                <div class="add-room">
+                                    <button class="btn btn-ghost add-room-link" data-max-rooms="5" data-min-rooms="1"
+                                        type="button">+ Add room
+                                    </button>
+                                </div>
+                                <div class="room-resume">_ rooms, _ adults, _ children, _ babies</div>
+                                <button class="btn btn-primary room-apply" type="button">Apply
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="voucher-code">
+                    <div class="form-group labelup">
+                        <label class="labelup-control" for="voucherCode-sb">Promo code
+                        </label>
+                        <input class="form-control text-ellipsis" type="text" name="voucherCode" id="voucherCode-sb"
+                            maxlength="30">
+                        <button class="btn-clear js-input-clear" type="button" aria-label="Clear"><span
+                                class="nh-ic-input-clear" aria-hidden="true"></span></button>
+                    </div>
+                </div>
+                <div class="search-btn">
+                    <button class="btn-block btn btn-primary btn-loader" type="submit">
+                        <span class="btn-text">Search</span>
+                        <div class="spinner">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

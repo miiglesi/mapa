@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        // OBJETO CON LOS ENTORNOS Y DOMINIOS PERMITIDOS
+        var datasets = {
+            "securepayment.nh-hotels.com": {
+                domains: ["cppreas.nh-hotels.com", "otro", "otro"]
+            },
+            "securepayment.pre.nh-hotels.com": {
+                domains: ["dominio.com", "otro", "otro"]
+            },
+            "securepayment.dev.nh-hotels.com": {
+                domains: ["dominio.com", "otro", "otro"]
+            }
+        };
+        // URL CALLBACK PARA COMPROBAR
+        urlDecode = "https://cppreas.nh-hotels.com/booking/B"
+        var u = (urlDecode.split("//")[1]).split("/booking")[0]; //get domain     
+
+        if(typeof datasets[window.location.hostname] != 'undefined'){
+            v=(datasets[window.location.hostname]["domains"]).includes(u);
+        }
+        if(!v) window.location.href = "https://" + window.location.hostname + "/error"
+
+
+
+
+       
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

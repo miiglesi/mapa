@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script>
+    // DUPLICO LOGIN PARA SEPARAR EL GUEST DATA FORM
+    function loginSSO(loginData) {
+
+
+      promise = $.ajax({
+        method: "GET",
+        url: "http://127.0.0.1:8080/p.html",
+        data: JSON.stringify(loginData),
+        async: false,    
+      
+      });
+
+      return promise.then(function (res) {
+        //delete res.data.ticketGrantingTicket; -> descomentar para probar el error del login
+        if (res) {
+          return res;
+        } else {
+          return {
+            "message": "Login Error"
+          };
+        }
+      }, function (jqXHR, exception) {
+        //LOGIN KO!
+        if (jqXHR.status === 0) {
+          errorMessage = 'Not connect.\n Verify Network.';
+        } else if (jqXHR.status == 404) {
+          errorMessage = 'Requested page not found. [404]';
+        } else if (jqXHR.status == 500) {
+          errorMessage = 'Internal Server Error [500].';
+        } else if (exception === 'parsererror') {
+          errorMessage = 'Requested JSON parse failed.';
+        } else if (exception === 'timeout') {
+          errorMessage = 'Time out error.';
+        } else if (exception === 'abort') {
+          errorMessage = 'Ajax request aborted.';
+        } else {
+          errorMessage = 'Login Error';
+        }
+        return {
+          "message": errorMessage
+        };
+      });
+
+    }
+
+    /**
+     * @description handle the user login successfully response
+     * @param {*} response - data of user login succesffuly
+     */
+    function _onSubmitLoginSuccess(response) {
+
+      console.log('_onSubmitLoginSuccess');
+      return false;
+      var loginSuccessCallbackName = $loginForm.data('callback');
+      var loginSuccessCallback = getFunctionByName(loginSuccessCallbackName);
+      var isFunction = (typeof loginSuccessCallback) === "function";
+      utils.callTrackForms("success", "loginRewardsForm", "success");
+      if (isFunction) {
+        loginSuccessCallback(response)
+          .then(function () {
+            if ($modalLogin.length) {
+              $modalLogin.modal("hide");
+            }
+          }, function (error) {
+            _onSubmitLoginFailure(error);
+          });
+      } else {
+        window.location = response.targetUrl;
+      }
+    }
+
+    $(function () {
+      loginSSO({
+        "p": "ppp"
+      }).then(_onSubmitLoginSuccess);
+    });
+  </script>
+  <div id="prueba"></div>
+</body>
+
+</html>
