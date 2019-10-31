@@ -10063,7 +10063,7 @@ $.widget("nh.floorMap", {
             y: this.pos.y
         };
         console.log("count drgin",this.dragin)
-        if(this.dragin < 5) $(".prevent-click").removeClass(".prevent-click")
+        if(this.dragin < 8) $(".prevent-click").removeClass("prevent-click")
         this.dragin = 0
         console.log("_endTouch")
     },
