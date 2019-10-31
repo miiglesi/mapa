@@ -9876,6 +9876,7 @@ $.widget("nh.floorMap", {
             this.selectedRoomData.selected = false;
         }
         this.options.data.rooms.some(room => {
+            console.log("has class")
             if (room.id === $this.data("number") && !$this.hasClass("prevent-click")) {
                 this.selectedRoomData = room;
                 return true;
@@ -9883,6 +9884,7 @@ $.widget("nh.floorMap", {
         });
         this.keepPreselectedRoom = true;
         this.preselectedRoomInfo.preselected = false;
+        console.log("has class 2")
         if ($this.hasClass("prevent-click")) {
             ev.preventDefault();
             ev.stopPropagation();
@@ -10175,7 +10177,7 @@ $.widget("nh.floorMap", {
         var target = $(ev.target);
         var targetParent = target.parents(".room");
         if (targetParent.length && !targetParent.hasClass("prevent-click")) {
-            //targetParent.addClass("prevent-click");
+            targetParent.addClass("prevent-click");
         }
     },
     _saveRoomData: function(roomData, roomContainer) {
