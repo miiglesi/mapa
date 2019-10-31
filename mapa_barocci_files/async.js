@@ -10177,7 +10177,7 @@ $.widget("nh.floorMap", {
     },
     _preventClickWhenDragging: function(ev) {
         console.log("drging")
-        this.dragin ++;
+        this.dragin = (this.dragin+1) || 1 ;
         var target = $(ev.target);
         var targetParent = target.parents(".room");
         if (targetParent.length && !targetParent.hasClass("prevent-click")) {
