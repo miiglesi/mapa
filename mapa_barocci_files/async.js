@@ -9548,11 +9548,7 @@ var mCioRoomSelected = function() {
     function _initialRoomModalState() {
         navigate(selectedModalTemplate);
     }
-
     function navigate(tplUrl) {
-        alert("asjdflkñasdjf")
-    }
-    function navigatexx(tplUrl) {
         mCioRoomSelectedModal.htmlInject("toggleLoading", true, $("#modal-room-selected").find(".modal-body"));
         let roomSelect = $(".is-selected").find(".room-content").data("room");
         mChooseRoom.hiddenForm.val(roomSelect);
