@@ -9824,7 +9824,6 @@ $.widget("nh.floorMap", {
         top: 0,
         left: 0
     },
-    dragin: 0,
     keepPreselectedRoom: false,
     centerToPoint: false,
     newMapFetched: false,
@@ -9976,6 +9975,7 @@ $.widget("nh.floorMap", {
         this.floorMap = this.floorMapContent.find(".map");
         this.floorMapCanvas = this.floorMap.find(".maps-canvas");
         this.zoomButton = this.element.find(".zoom-button");
+        this.dragin = 0
         if (this.element.hasClass("widget-initialized")) {
             return;
         }
