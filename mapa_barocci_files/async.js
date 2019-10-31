@@ -10170,7 +10170,7 @@ $.widget("nh.floorMap", {
         var target = $(ev.target);
         var targetParent = target.parents(".room");
         if (targetParent.length && !targetParent.hasClass("prevent-click")) {
-            targetParent.addClass("prevent-click");
+            //targetParent.addClass("prevent-click");
         }
     },
     _saveRoomData: function(roomData, roomContainer) {
