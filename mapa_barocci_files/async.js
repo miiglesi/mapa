@@ -9824,6 +9824,7 @@ $.widget("nh.floorMap", {
         top: 0,
         left: 0
     },
+    dragin: 0,
     keepPreselectedRoom: false,
     centerToPoint: false,
     newMapFetched: false,
@@ -10061,6 +10062,8 @@ $.widget("nh.floorMap", {
             x: this.pos.x,
             y: this.pos.y
         };
+        console.log("count drgin",this.dragin)
+        if(this.dragin < 5) $(".prevent-click").removeClass(".prevent-click")
         console.log("_endTouch")
     },
     _getAreaPosition() {
@@ -10174,6 +10177,7 @@ $.widget("nh.floorMap", {
     },
     _preventClickWhenDragging: function(ev) {
         console.log("drging")
+        this.dragin ++;
         var target = $(ev.target);
         var targetParent = target.parents(".room");
         if (targetParent.length && !targetParent.hasClass("prevent-click")) {
