@@ -10064,6 +10064,7 @@ $.widget("nh.floorMap", {
         };
         console.log("count drgin",this.dragin)
         if(this.dragin < 5) $(".prevent-click").removeClass(".prevent-click")
+        this.dragin = 0
         console.log("_endTouch")
     },
     _getAreaPosition() {
