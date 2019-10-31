@@ -9889,6 +9889,7 @@ $.widget("nh.floorMap", {
             $this.removeClass("prevent-click");
             return;
         } else {
+            console.log("entro")
             if (!isSelected) {
                 $this.addClass("is-selected");
                 this.selectedRoomData.selected = true;
@@ -9995,6 +9996,7 @@ $.widget("nh.floorMap", {
         });
     },
     _drawRooms: function(roomsData) {
+        console.log('_drawRooms')
         var roomData;
         var roomContainer;
         var roomContent;
@@ -10012,6 +10014,7 @@ $.widget("nh.floorMap", {
                     roomClass += "room-available";
                     roomContainer.off("click touchend");
                     if (this.options.zoomType === "In") {
+                        console.log("click")
                         roomContainer.on("click touchend", this.selectRoom.bind(this));
                     }
                 } else {
@@ -10038,7 +10041,7 @@ $.widget("nh.floorMap", {
             this.floorMap.append(roomContainer);
         }
     },
-    _endTouch: function(ev) {
+    _endTouch: function(ev) {        
         var pointerCoordinates = {
             top: ev.pageY || this.ev.y,
             left: ev.pageX || this.ev.x
@@ -10056,6 +10059,7 @@ $.widget("nh.floorMap", {
             x: this.pos.x,
             y: this.pos.y
         };
+        console.log("_endTouch")
     },
     _getAreaPosition() {
         var previousZoom = this.options.zoomType === "In" ? "out" : "in";
@@ -10170,7 +10174,7 @@ $.widget("nh.floorMap", {
         var target = $(ev.target);
         var targetParent = target.parents(".room");
         if (targetParent.length && !targetParent.hasClass("prevent-click")) {
-            targetParent.addClass("prevent-click");
+            //targetParent.addClass("prevent-click");
         }
     },
     _saveRoomData: function(roomData, roomContainer) {
@@ -10565,6 +10569,7 @@ var mChooseRoom = function(window) {
         selectedRoomPanel.hidePanel();
     }
     function _showRoomDetail(ev, data) {
+        console.log("muestro detalle")
         if (data.isSelected) {
             if (isBigScreen) {
                 selectedRoomPanel.showPanel(data.type, "selected");
