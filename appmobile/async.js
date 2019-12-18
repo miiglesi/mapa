@@ -41104,7 +41104,8 @@ var Landings = (function(){
 				let hostName = link.hostname;
 				if (isMobile.Android() != null && hostName.indexOf("google") > 0 ) selectLink = link , formatLink = "market://details?id=";
         if (isMobile.iOS() != null && hostName.indexOf("apple") > 0 ) selectLink = link , formatLink = "itms-apps://";     
-        if (isMobile.Android() || isMobile.iOS()) $(this).addClass("activeapp").removeAttr("target") ;
+        if (isMobile.Android()) $(this).addClass("activeapp").removeAttr("target") ;
+        if (isMobile.iOS()) $(this).addClass("activeapp").removeAttr("target") ;
        
       });
       
