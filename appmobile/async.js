@@ -41099,12 +41099,18 @@ var Landings = (function(){
 		if (isMobile.Android() || isMobile.iOS()) {
 			var selectLink = null, formatLink = "";
 
-			links.each(function(index, link) {        
+			links.each(function(index, link) {
+        $this = $(this);        
 				let hostName = link.hostname;
 				if (isMobile.Android() != null && hostName.indexOf("google") > 0 ) selectLink = link , formatLink = "market://details?id=";
-        if (isMobile.iOS() != null && hostName.indexOf("apple") > 0 ) selectLink = link , formatLink = "itms-apps://";       
+        if (isMobile.iOS() != null && hostName.indexOf("apple") > 0 ) selectLink = link , formatLink = "itms-apps://";     
+        if (isMobile.Android() || isMobile.iOS()) $(this).addClass("activeapp").removeAttr("target") ;
+       
       });
-      console.log (selectLink)
+      
+      if($(".activeapp").length) $(".activeapp").trigger("click");
+      
+      /*console.log (selectLink)
 			//ENTRAMOS SI ES ANDROID o IOS
 			if (selectLink.href != "" && (isMobile.Android() || isMobile.iOS() )){
 				$(".m-signup").hide();
@@ -41131,7 +41137,7 @@ var Landings = (function(){
 					//selectLink.href = selectLink.back; // esto creo que no hace falta por que pilla lo que habia
 					selectLink.click();
 				}
-			}
+			}*/
 		}
 	};
 	// Public API
