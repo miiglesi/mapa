@@ -41108,10 +41108,12 @@ var Landings = (function(){
 						selectLink.href.lastIndexOf("=") + 1,
 						selectLink.href.lastIndexOf("")
 					);
-					selectLink.href = formatLink + sublink;
+          //selectLink.href = formatLink + sublink;
+          selectLink.click();
 				}
-        //selectLink.click();
-        window.location.href = selectLink.href;
+        if(isMobile.iOS()){
+          window.location.href = selectLink.href;
+				}
 			}
 		}
 	};
