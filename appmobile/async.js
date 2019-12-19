@@ -41110,7 +41110,7 @@ var Landings = (function(){
 						selectLink.href.lastIndexOf("")
 					);
           selectLink.href = formatLink + sublink;
-          selectLink.target("");
+          selectLink.target = "";
           selectLink.click();
 				}
         if(isMobile.iOS()){
