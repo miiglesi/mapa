@@ -41108,7 +41108,7 @@ var Landings = (function(){
 						selectLink.href.lastIndexOf("=") + 1,
 						selectLink.href.lastIndexOf("")
 					);
-          //selectLink.href = formatLink + sublink;
+          selectLink.href = formatLink + sublink;
           selectLink.target = "";
           selectLink.click();
 				}
