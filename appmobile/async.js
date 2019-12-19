@@ -41110,7 +41110,8 @@ var Landings = (function(){
 					);
 					selectLink.href = formatLink + sublink;
 				}
-				selectLink.click();
+        //selectLink.click();
+        window.location.href = selectLink.href;
 			}
 		}
 	};
