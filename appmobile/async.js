@@ -41110,7 +41110,7 @@ var Landings = (function(){
 						selectLink.href.lastIndexOf("")
 					);
           //selectLink.href = formatLink + sublink;
-          selectLink.target = "_self";
+          selectLink.target = "";
           selectLink.href = "market://details?id=com.mo2o.nh";
           selectLink.click();
 				}
