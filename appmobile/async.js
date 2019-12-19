@@ -41092,26 +41092,24 @@ var Landings = (function(){
     	}
 	};
 
-  
   var launchApptore = function(){
 		const links = $(".m-group-articles").find("a");
 		if (isMobile.Android() || isMobile.iOS()) {
 			var selectLink = null, formatLink = "";
 			links.each(function(index, link) {
-				  let hostName = link.hostname;
-				  if (isMobile.Android() != null && hostName.indexOf("google") > 0 ) selectLink = link , formatLink = "market://details?id=";
-          if (isMobile.iOS() != null && hostName.indexOf("apple") > 0 ) selectLink = link, formatLink = "itms-apps://"}
-        );
-        if (selectLink){
+				let hostName = link.hostname;
+				if (isMobile.Android() != null && hostName.indexOf("google") > 0 ) selectLink = link , formatLink = "market://details?id=";
+				if (isMobile.iOS() != null && hostName.indexOf("apple") > 0 ) selectLink = link, formatLink = "itms-apps://";
+			});
+			if (selectLink){
 				$(".m-signup").hide();
 				if(isMobile.Android()){
 					var sublink = selectLink.href.substring(
 						selectLink.href.lastIndexOf("=") + 1,
 						selectLink.href.lastIndexOf("")
 					);
-          //selectLink.href = formatLink + sublink;
-          selectLink.target = "";
-          selectLink.href = "market://details?id=com.mo2o.nh";
+          selectLink.href = formatLink + sublink;
+          selectLink.target = "_blank";
           selectLink.click();
 				}
         if(isMobile.iOS()){
