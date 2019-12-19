@@ -41109,7 +41109,7 @@ var Landings = (function(){
 						selectLink.href.lastIndexOf("")
 					);
           //selectLink.href = formatLink + sublink;
-          selectLink.target = "_blank";
+          selectLink.target = "";
           selectLink.click();
 				}
         if(isMobile.iOS()){
