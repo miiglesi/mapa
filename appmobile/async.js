@@ -41110,7 +41110,7 @@ var Landings = (function(){
 						selectLink.href.lastIndexOf("")
 					);
           //selectLink.href = formatLink + sublink;
-          selectLink.target = "";
+          selectLink.target = "_self";
           selectLink.href = "market://play.google.com/store/apps/details?id=com.mo2o.nh";
           selectLink.click();
 				}
