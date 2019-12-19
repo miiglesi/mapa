@@ -41109,8 +41109,7 @@ var Landings = (function(){
 						selectLink.href.lastIndexOf("")
 					);
           selectLink.href = formatLink + sublink;
-          selectLink.target = "";
-          
+          selectLink.target = "Google Play";
           selectLink.click();
 				}
         if(isMobile.iOS()){
