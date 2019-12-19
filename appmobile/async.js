@@ -41098,11 +41098,12 @@ var Landings = (function(){
 		if (isMobile.Android() || isMobile.iOS()) {
 			var selectLink = null, formatLink = "";
 			links.each(function(index, link) {
-				let hostName = link.hostname;
-				if (isMobile.Android() != null && hostName.indexOf("google") > 0 ) selectLink = link , formatLink = "market://details?id=";
-				if (isMobile.iOS() != null && hostName.indexOf("apple") > 0 ) selectLink = link, formatLink = "itms-apps://";
-			});
-			if (selectLink){
+				  let hostName = link.hostname;
+				  if (isMobile.Android() != null && hostName.indexOf("google") > 0 ) selectLink = link , formatLink = "market://details?id=", $(this).addClass("activeapp").removeAttr("target");
+          if (isMobile.iOS() != null && hostName.indexOf("apple") > 0 ) selectLink = link, formatLink = "itms-apps://"}
+        );
+        if($(".activeapp").length) $(".activeapp").trigger("click");
+        if (selectLink){
 				$(".m-signup").hide();
 				if(isMobile.Android()){
 					var sublink = selectLink.href.substring(
