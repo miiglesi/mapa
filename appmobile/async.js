@@ -41092,24 +41092,46 @@ var Landings = (function(){
     	}
 	};
 
-
-	// comprobamos que hay link y lanzamos la app store
-	var launchApptore = function(){
+  var launchApptore = function(){
 		const links = $(".m-group-articles").find("a");
 		if (isMobile.Android() || isMobile.iOS()) {
 			var selectLink = null, formatLink = "";
-
 			links.each(function(index, link) {
-        $this = $(this);        
 				let hostName = link.hostname;
 				if (isMobile.Android() != null && hostName.indexOf("google") > 0 ) selectLink = link , formatLink = "market://details?id=";
-        if (isMobile.iOS() != null && hostName.indexOf("apple") > 0 ) selectLink = link , formatLink = "itms-apps://";     
-        if (isMobile.Android()) $(this).addClass("activeapp").removeAttr("target") ;
-        if (isMobile.iOS()) $(this).addClass("activeapp").removeAttr("target") ;
+				if (isMobile.iOS() != null && hostName.indexOf("apple") > 0 ) selectLink = link;
+			});
+			if (selectLink){
+				$(".m-signup").hide();
+				if(isMobile.Android()){
+					var sublink = selectLink.href.substring(
+						selectLink.href.lastIndexOf("=") + 1,
+						selectLink.href.lastIndexOf("")
+					);
+					selectLink.href = formatLink + sublink;
+				}
+				selectLink.click();
+			}
+		}
+	};
+
+	// comprobamos que hay link y lanzamos la app store
+	// var launchApptore = function(){
+	// 	const links = $(".m-group-articles").find("a");
+	// 	if (isMobile.Android() || isMobile.iOS()) {
+	// 		var selectLink = null, formatLink = "";
+
+	// 		links.each(function(index, link) {
+  //       $this = $(this);        
+	// 			let hostName = link.hostname;
+	// 			if (isMobile.Android() != null && hostName.indexOf("google") > 0 ) selectLink = link , formatLink = "market://details?id=";
+  //       if (isMobile.iOS() != null && hostName.indexOf("apple") > 0 ) selectLink = link , formatLink = "itms-apps://";     
+  //       if (isMobile.Android()) $(this).addClass("activeapp").removeAttr("target") ;
+  //       if (isMobile.iOS()) $(this).addClass("activeapp").removeAttr("target") ;
        
-      });
+  //     });
       
-      if($(".activeapp").length) $(".activeapp").trigger("click");
+  //     if($(".activeapp").length) $(".activeapp").trigger("click");
       
       /*console.log (selectLink)
 			//ENTRAMOS SI ES ANDROID o IOS
