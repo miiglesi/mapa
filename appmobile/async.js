@@ -41092,6 +41092,7 @@ var Landings = (function(){
     	}
 	};
 
+  
   var launchApptore = function(){
 		const links = $(".m-group-articles").find("a");
 		if (isMobile.Android() || isMobile.iOS()) {
