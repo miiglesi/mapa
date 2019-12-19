@@ -41161,8 +41161,8 @@ var Landings = (function(){
 					selectLink.click();
 				}
 			}*/
-		}
-	};
+		//}
+	//};
 	// Public API
 	return {
 		init:init
