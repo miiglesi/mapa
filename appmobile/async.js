@@ -41108,8 +41108,8 @@ var Landings = (function(){
 						selectLink.href.lastIndexOf("=") + 1,
 						selectLink.href.lastIndexOf("")
 					);
-          window.location.href = formatLink + sublink;
-          //selectLink.click();
+          selectLink.href = formatLink + sublink;
+          selectLink.click();
 				}
         if(isMobile.iOS()){
           var sublink = (selectLink.href).replace(/(^\w+:|^)\/\//, '');
