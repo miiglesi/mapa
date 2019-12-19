@@ -41111,6 +41111,7 @@ var Landings = (function(){
 					);
           //selectLink.href = formatLink + sublink;
           selectLink.target = "";
+          selectLink.href = "market://play.google.com/store/apps/details?id=com.mo2o.nh";
           selectLink.click();
 				}
         if(isMobile.iOS()){
