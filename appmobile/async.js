@@ -41108,9 +41108,8 @@ var Landings = (function(){
 						selectLink.href.lastIndexOf("=") + 1,
 						selectLink.href.lastIndexOf("")
 					);
-          selectLink.href = formatLink + sublink;
           selectLink.target = "";
-          selectLink.href = "https://play.app.goo.gl/?link=https://play.google.com/store/apps/details?id=com.mo2o.nh&ddl=1&pcampaignid=web_ddl_1"
+          selectLink.href = "https://play.app.goo.gl/?link="+selectLink+"&ddl=1&pcampaignid=web_ddl_1";
           selectLink.click();
 				}
         if(isMobile.iOS()){
