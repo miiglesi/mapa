@@ -41104,7 +41104,7 @@ var Landings = (function(){
 			if (selectLink){
 				$(".m-signup").hide();
 				if(isMobile.Android()){
-          selectLink.target = "";
+          selectLink.target = "_blank";
           selectLink.href = "https://play.app.goo.gl/?link="+selectLink+"&ddl=1&pcampaignid=web_ddl_1";
           selectLink.click();
 				}
