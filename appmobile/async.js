@@ -41104,10 +41104,6 @@ var Landings = (function(){
 			if (selectLink){
 				$(".m-signup").hide();
 				if(isMobile.Android()){
-					var sublink = selectLink.href.substring(
-						selectLink.href.lastIndexOf("=") + 1,
-						selectLink.href.lastIndexOf("")
-					);
           selectLink.target = "";
           selectLink.href = "https://play.app.goo.gl/?link="+selectLink+"&ddl=1&pcampaignid=web_ddl_1";
           selectLink.click();
